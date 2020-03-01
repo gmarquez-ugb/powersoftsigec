@@ -1,12 +1,23 @@
 package com.powersoft.sigec.model.entities;
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Column;
 
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 @Entity
-public class Clientes {
+@Table(name="clientes")
+public class Clientes implements Serializable {
+	private static final long serialVersionUID = 1L;
 	 @Id
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long id;
 	 
 	 @Column(length =255, name = "dui")
@@ -23,7 +34,8 @@ public class Clientes {
 	 private String telefono;
 	 @Column(length =255, name = "direccion")
 	 private String estado;
-	 @Column(length =255, name = "id_puesto")
-	 private String id_puesto;
+	 @ManyToOne(fetch = FetchType.LAZY)
+	 @JoinColumn(name = "id_puesto", nullable=false)
+	 private Puestos puesto;
 
 }
