@@ -1,0 +1,77 @@
+package com.powersoft.sigec.rest;
+
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.powersoft.sigec.controller.clientesController;
+import com.powersoft.sigec.model.entities.Clientes;
+
+@RestController
+@RequestMapping(path = "/api")
+public class clientesRest {
+     @Autowired
+    private clientesController dao;
+    
+    @PostMapping("/clientes")
+    public int add(@RequestBody(required = true)Clientes user){
+        try{
+            dao.save(user);
+            dao.flush();
+            return user.getId().intValue();
+        }catch (Exception e){
+        return 0;
+        }
+    } 
+    @PostMapping("/editarclientes")
+    public int edit(@RequestBody(required = true)Clientes user){
+        try{
+            dao.save(user);
+            dao.flush();
+            return user.getId().intValue();
+        }catch (Exception e){
+        return 0;
+        }
+    }
+    @DeleteMapping("/clientes/{id}")
+    public int delete(@PathVariable(name = "id")Long user){
+        try{
+        Clientes u = new Clientes();
+        u.setId(user);
+        dao.delete(u);
+        return 1;
+        }catch (Exception e){
+        return 1;
+        }
+    }
+    
+    @GetMapping("/clientes/{id}")
+    public Optional<Clientes> findUser(@PathVariable(name = "id")Long id){
+        return dao.findById(id);
+    }
+    
+    @GetMapping("/clientes")
+    public List<Clientes> findAll(){
+        return dao.findAll();
+    }
+    
+    @PostMapping("/login")
+    public Clientes login(@RequestBody(required = true)Clientes user){
+        return dao.login(user.getCorreo(), user.getClave());
+    }
+    
+    @PostMapping("/verificar")
+    public Clientes verificar(@RequestBody(required = true)Clientes user){
+        return dao.verificar(user.getCorreo());
+    }
+    
+}
+

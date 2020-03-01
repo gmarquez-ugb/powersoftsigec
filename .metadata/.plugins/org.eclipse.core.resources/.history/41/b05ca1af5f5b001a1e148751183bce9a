@@ -1,0 +1,29 @@
+package com.powersoft.sigec.model.entities;
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Column;
+
+@Entity
+public class Clientes {
+	 @Id
+	 private Long id;
+	 
+	 @Column(length =255, name = "dui")
+	 private String dui;
+	 @Column(length =255, name = "nombre")
+	 private String nombre;
+	 @Column(length =255, name = "apellidos")
+	 private String apellidos;
+	 @Column(length =255, name = "correo")
+	 private String correo;
+	 @Column(length =255, name = "contraseña")
+	 private String contraseña;
+	 @Column(length =255, name = "telefono")
+	 private String telefono;
+	 @Column(length =255, name = "direccion")
+	 private String estado;
+	 @Column(length =255, name = "id_puesto")
+	 private String id_puesto;
+
+}

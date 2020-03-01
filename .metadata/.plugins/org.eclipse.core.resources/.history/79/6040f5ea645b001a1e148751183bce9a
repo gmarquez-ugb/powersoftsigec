@@ -1,0 +1,45 @@
+package com.powersoft.sigec.model.entities;
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Column;
+
+@Entity
+public class Clientes implements Serializable{
+	 @Id
+	 private Long id;
+	 @Column(length =255, name = "dui")
+	 private String dui;
+	 @Column(length =255, name = "nombre")
+	 private String nombre;
+	 @Column(length =255, name = "apellidos")
+	 private String apellidos;
+	 @Column(length =255, name = "correo")
+	 private String correo;
+	 @Column(length =255, name = "contraseña")
+	 private String contraseña;
+	 @Column(length =255, name = "telefono")
+	 private String telefono;
+	 @Column(length =255, name = "direccion")
+	 private String direccion;
+	 @Column(length =255, name = "estado")
+	 private String estado;
+	 @Column(length =255, name = "id_puesto")
+	 private String id_puesto;
+	 
+	 public void clientes(String dui,String nombre, String apellidos, String correo, String contraseña, String telefono,String direccion ,String estado,String id_puesto)
+	 {
+	 	this.dui = dui;
+	 	this.nombre= nombre;
+	 	this.apellidos =apellidos;
+	 	this.correo = correo;
+	 	this.contraseña=contraseña;
+	 	this.telefono = telefono;
+	 	this.direccion = direccion;
+	 	this.id_puesto = id_puesto;
+	 }
+	 
+}
+
+
