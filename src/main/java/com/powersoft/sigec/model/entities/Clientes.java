@@ -20,7 +20,7 @@ public class Clientes implements Serializable {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long id;
 	 
-	 @Column(length =255, name = "dui")
+	 @Column(length =255, name = "dui") 
 	 private String dui;
 	 @Column(length =255, name = "nombre")
 	 private String nombre;
@@ -36,6 +36,6 @@ public class Clientes implements Serializable {
 	 private String estado;
 	 @ManyToOne(fetch = FetchType.LAZY)
 	 @JoinColumn(name = "id_puesto", nullable=false)
-	 private Puestos puesto;
+	 private Puestos id_puesto;
 
 }

@@ -20,8 +20,6 @@ public class Puestos implements Serializable {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long id;
 	 
-	 @Column(length =255, name = "id_puesto")
-	 private String id_puesto;
 	 @Column(length =255, name = "numero")
 	 private String numero;
 	 @Column(length =255, name = "medidas")
