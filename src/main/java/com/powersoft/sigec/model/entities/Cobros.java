@@ -20,22 +20,63 @@ public class Cobros implements Serializable {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long id;
 	 
-	 @Column(length =255, name = "id_cobro")
-	 private String id_cobro;
+	 public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Usuarios getCodigo() {
+		return id_usuario;
+	}
+	public void setCodigo(Usuarios id_usuario) {
+		this.id_usuario = id_usuario;
+	}
+	public Arrendamientos getId_arrendamiento() {
+		return id_arrendamiento;
+	}
+	public void setId_arrendamiento(Arrendamientos id_arrendamiento) {
+		this.id_arrendamiento = id_arrendamiento;
+	}
+	public String getEstado() {
+		return estado;
+	}
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	public String getFechaCobro() {
+		return fechaCobro;
+	}
+	public void setFechaCobro(String fechaCobro) {
+		this.fechaCobro = fechaCobro;
+	}
+	public String getDesde() {
+		return desde;
+	}
+	public void setDesde(String desde) {
+		this.desde = desde;
+	}
+	public String getHasta() {
+		return hasta;
+	}
+	public void setHasta(String hasta) {
+		this.hasta = hasta;
+	}
+	@ManyToOne(fetch = FetchType.LAZY)
+	 @JoinColumn(name = "id_usuario", nullable=false)
+	 private Usuarios id_usuario ;
 	 @ManyToOne(fetch = FetchType.LAZY)
-	 @JoinColumn(name = "id_cliente", nullable=false)
-	 private Clientes dui;
-	 @ManyToOne(fetch = FetchType.LAZY)
-	 @JoinColumn(name = "id_usuairo", nullable=false)
-	 private Usuarios codigo;
+	 @JoinColumn(name = "id_arrendamiento", nullable=false)
+	 private Arrendamientos id_arrendamiento ;
 	 @Column(length =255, name = "estado")
 	 private String estado;
 	 @Column(length =255, name = "fecha")
-	 private String fecha;
+	 private String fechaCobro;
 	 @Column(length =255, name = "desde")
 	 private String desde;
 	 @Column(length =255, name = "hasta")
 	 private String hasta; 
-
+	 
+	 
 }
 

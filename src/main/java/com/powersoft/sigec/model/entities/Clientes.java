@@ -12,15 +12,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name="clientes")
 public class Clientes implements Serializable {
 	private static final long serialVersionUID = 1L;
-	 @Id
+	@Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long id;
 	 
-	 @Column(length =255, name = "dui")
+	 @Column(length =255, name = "dui") 
 	 private String dui;
 	 @Column(length =255, name = "nombre")
 	 private String nombre;
@@ -33,9 +37,56 @@ public class Clientes implements Serializable {
 	 @Column(length =255, name = "telefono")
 	 private String telefono;
 	 @Column(length =255, name = "direccion")
-	 private String estado;
-	 @ManyToOne(fetch = FetchType.LAZY)
-	 @JoinColumn(name = "id_puesto", nullable=false)
-	 private Puestos puesto;
-
+	 private String direccion;
+	 
+	 public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getDui() {
+		return dui;
+	}
+	public void setDui(String dui) {
+		this.dui = dui;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApellidos() {
+		return apellidos;
+	}
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+	public String getCorreo() {
+		return correo;
+	}
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+	public String getContraseña() {
+		return contraseña;
+	}
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
+	}
+	public String getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	 
 }
+
