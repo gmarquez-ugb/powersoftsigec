@@ -20,6 +20,8 @@ public class Cobros implements Serializable {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private Long id;
 	 
+	 @Column(length =255, name = "id_cobro")
+	 private String id_cobro;
 	 @ManyToOne(fetch = FetchType.LAZY)
 	 @JoinColumn(name = "id_cliente", nullable=false)
 	 private Clientes dui;

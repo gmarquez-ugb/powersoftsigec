@@ -30,7 +30,7 @@ import javax.persistence.Column;
 	 @Column(length =255, name = "nivel")
 	 private String nivel;
 	 @Column(length =255, name = "estado")
-	 private String estado; 
+	 private String estado;
 
 }
 
