@@ -30,47 +30,7 @@ import javax.persistence.Column;
 	 @Column(length =255, name = "nivel")
 	 private String nivel;
 	 @Column(length =255, name = "estado")
-	 private String estado; 
+	 private String estado;
 
-	 public Long getId() 
-	 {return id;}			
-	 public void setId(Long id) 
-	 {this.id = id;}
-	 
-	 public String getCodigo() 
-	 {return codigo;}			
-	 public void setCodigo(String codigo) 
-	 {this.codigo = codigo;}
-	 
-	 public String getNombre() 
-	 {return nombre;}			
-	 public void setNombre(String name) 
-	 {this.nombre = name;}
-	 
-	 
-	 public String getCorreo() 
-	 {return correo;}			
-	 public void setCorreo(String correo) 
-	 {this.correo = correo;}
-	 
-	 public String getContraseña() 
-	 {return contraseña;}			
-	 public void setContraseña(String contraseña) 
-	 {this.contraseña = contraseña;}
-	 
-	 public String getTelefono() 
-	 {return telefono;}			
-	 public void setTelefono(String telefono) 
-	 {this.telefono = telefono;}
-	 
-	 public String getNivel() 
-	 {return nivel;}			
-	 public void setDireccion(String nivel) 
-	 {this.nivel = nivel;}
-	 
-	 public String getEstado() 
-	 {return estado;}			
-	 public void setIdEstado(String estado) 
-	 {this.estado = estado;}
 }
 
