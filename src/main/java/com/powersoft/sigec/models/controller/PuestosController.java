@@ -18,24 +18,24 @@ import java.util.Optional;
 public class PuestosController {
 	@Autowired
 	public PuestosRepository repository;
-	
-	@RequestMapping(value = "/busqueda", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public List<Puestos> getPuestos(){
 		 List<Puestos> listado = (List<Puestos>) repository.findAll();
 		 return listado;
 	}
-	
-	@RequestMapping(value="/buscarid/{id}", method = RequestMethod.GET)
+
+	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	public Optional<Puestos> obtenerCliente(@PathVariable("id") Long id){
 	Optional<Puestos> PuestosObjeto = repository.findById(id);
 	return PuestosObjeto;
 	}
-	@RequestMapping(value="/agregar", method = RequestMethod.POST)
+	@RequestMapping(value="/", method = RequestMethod.POST)
 	public Puestos add(@RequestBody Puestos entity){
 	Puestos objetoPuestos = repository.save(entity);
 	return objetoPuestos;
 	}
-	@RequestMapping(value="/eliminar/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id){
 	repository.deleteById(id);
 	}
