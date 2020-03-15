@@ -19,23 +19,23 @@ public class UbicacionesController {
 	@Autowired
 	public UbucacionesRepository repository;
 	
-	@RequestMapping(value = "/busqueda", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public List<Ubicaciones> getUbicaciones(){
 		 List<Ubicaciones> listado = (List<Ubicaciones>) repository.findAll();
 		 return listado;
 	}
 	
-	@RequestMapping(value="/buscarid/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	public Optional<Ubicaciones> obtenerCliente(@PathVariable("id") Long id){
 	Optional<Ubicaciones> UbicacionesObjeto = repository.findById(id);
 	return UbicacionesObjeto;
 	}
-	@RequestMapping(value="/agregar", method = RequestMethod.POST)
+	@RequestMapping(value="/", method = RequestMethod.POST)
 	public Ubicaciones add(@RequestBody Ubicaciones entity){
 	Ubicaciones objetoUbicaciones = repository.save(entity);
 	return objetoUbicaciones;
 	}
-	@RequestMapping(value="/eliminar/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
 	public void deleteById(@PathVariable("id") Long id){
 	repository.deleteById(id);
 	}
