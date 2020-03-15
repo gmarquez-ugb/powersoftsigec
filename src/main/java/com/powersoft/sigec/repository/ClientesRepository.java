@@ -1,4 +1,4 @@
-package com.powersoft.sigec.models.repository;
+package com.powersoft.sigec.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
