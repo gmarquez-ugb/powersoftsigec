@@ -1,7 +1,7 @@
 package com.powersoft.sigec.model.entities;
 
 import java.io.Serializable;
-
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name="arrendamientos")
 public class Arrendamientos implements Serializable {

@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Column;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name="puestos")
 public class Puestos implements Serializable {

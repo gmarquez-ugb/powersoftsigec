@@ -9,7 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
 
- @Entity
+ @SuppressWarnings("unused")
+@Entity
  @Table(name="usuarios")
  public class Usuarios implements Serializable {
  	private static final long serialVersionUID = 1L;
@@ -24,7 +25,7 @@ import javax.persistence.Column;
 	 @Column(length =255, name = "correo")
 	 private String correo;
 	 @Column(length =255, name = "contrase√±a")
-	 private String contrase√±a;
+	 private String contraseÒa;
 	 @Column(length =255, name = "telefono")
 	 private String telefono;
 	 @Column(length =255, name = "nivel")
@@ -53,10 +54,10 @@ import javax.persistence.Column;
 	 public void setCorreo(String correo) 
 	 {this.correo = correo;}
 	 
-	 public String getContrase√±a() 
-	 {return contrase√±a;}			
-	 public void setContrase√±a(String contrase√±a) 
-	 {this.contrase√±a = contrase√±a;}
+	 public String getContraseÒa() 
+	 {return contraseÒa;}			
+	 public void setContraseÒ(String contraseÒa) 
+	 {this.contraseÒa = contraseÒa;}
 	 
 	 public String getTelefono() 
 	 {return telefono;}			

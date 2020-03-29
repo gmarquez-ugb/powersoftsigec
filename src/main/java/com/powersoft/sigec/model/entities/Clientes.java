@@ -4,7 +4,6 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Column;
-
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +15,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name="clientes")
 public class Clientes implements Serializable {
@@ -33,7 +33,7 @@ public class Clientes implements Serializable {
 	 @Column(length =255, name = "correo")
 	 private String correo;
 	 @Column(length =255, name = "contraseña")
-	 private String contraseña;
+	 private String contrase�a;
 	 @Column(length =255, name = "telefono")
 	 private String telefono;
 	 @Column(length =255, name = "direccion")
@@ -69,11 +69,11 @@ public class Clientes implements Serializable {
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-	public String getContraseña() {
-		return contraseña;
+	public String getContrase�a() {
+		return contrase�a;
 	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContrase�a(String contrase�a) {
+		this.contrase�a = contrase�a;
 	}
 	public String getTelefono() {
 		return telefono;
